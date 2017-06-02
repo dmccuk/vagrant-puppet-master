@@ -1,4 +1,4 @@
-redit for this goes to garystafford/multi-vagrant-puppet-vms
+Credit for this goes to garystafford/multi-vagrant-puppet-vms
 ---
 
 New Project to create a vagrant puppet master.
@@ -27,9 +27,4 @@ sudo puppet cert list # should see 'node01.example.com' cert waiting for signatu
 sudo puppet cert sign --all # sign the agent node certs
 sudo puppet cert list --all # check for signed certs
 
-I'll be adding to this to customize the puppet modules as part of my work to test puppet modules I'll be deploying with satellite 6. I'll also be introducing Jenkins into the mix in another VM to setup and run my puppet modes and test.
-
-I'll be using bats tests which can be found here. They are easy to write and meet my testing requirements:
-
-https://github.com/sstephenson/bats
 
