@@ -18,7 +18,7 @@ Setup:
 
 Manual steps:
 --------
-Once run, on the puppet master do the following:
+Once your puppet master is running, on the puppet master do the following:
 
  1. Check the puppet master is installed:
      sudo service puppetmaster status
