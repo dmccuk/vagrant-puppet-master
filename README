@@ -1,0 +1,35 @@
+redit for this goes to garystafford/multi-vagrant-puppet-vms
+---
+
+New Project to create a vagrant puppet master.
+
+Installed NTP from puppet labs and pushes it out onto the nodes when puppet is run.
+
+Manual steps:
+
+Once run, on the puppet master do the following:
+
+sudo service puppetmaster status # test that puppet master was installed
+sudo service puppetmaster stop
+sudo puppet master --verbose --no-daemonize
+# Ctrl+C to kill puppet master
+sudo service puppetmaster start
+sudo puppet cert list --all # check for 'puppet' cert
+
+On the puppet nodes:
+
+sudo service puppet status # test that agent was installed
+sudo puppet agent --test --waitforcert=60 # initiate certificate signing request (CSR)
+
+Back on the puppet master:
+
+sudo puppet cert list # should see 'node01.example.com' cert waiting for signature
+sudo puppet cert sign --all # sign the agent node certs
+sudo puppet cert list --all # check for signed certs
+
+I'll be adding to this to customize the puppet modules as part of my work to test puppet modules I'll be deploying with satellite 6. I'll also be introducing Jenkins into the mix in another VM to setup and run my puppet modes and test.
+
+I'll be using bats tests which can be found here. They are easy to write and meet my testing requirements:
+
+https://github.com/sstephenson/bats
+
