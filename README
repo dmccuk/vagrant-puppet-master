@@ -1,21 +1,40 @@
-Credit for this goes to garystafford/multi-vagrant-puppet-vms
----
+Vagrant Puppet Master
+=========================
+This is the configuration file for my Udemy course to create a puppet master in Vagrant.
 
-New Project to create a vagrant puppet master.
+Credits:
+--------
+ * When I was learning Vagrant and puppet I did alot of research on the internet and found some useful code which I modified to suit my needs. I'd like to thanks garystafford/multi-vagrant-puppet-vms for his help.
 
-Installed NTP from puppet labs and pushes it out onto the nodes when puppet is run.
+Setup:
+--------
+ 1. Make you way to the directory you want to clone this code into.
+ 2. Run this command: git clone https://github.com/dmccuk/vagrant-puppet-master.git
+ 3. cd into the vagrant-puppet-master directory
+ 4. Run the vagrant command : vagrant up
+ 5. (For Windows) Setup the path to ssh running this command: set PATH=%PATH%;C:\Program Files\Git\usr\bin
+ 6. SSH into your new puppet master: vagrant ssh
 
 Manual steps:
-
+--------
 Once run, on the puppet master do the following:
 
-sudo service puppetmaster status # test that puppet master was installed
-sudo service puppetmaster stop
-sudo puppet master --verbose --no-daemonize
-# Ctrl+C to kill puppet master
-sudo service puppetmaster start
-sudo puppet cert list --all # check for 'puppet' cert
+ 1. Check the puppet master is installed:
+     sudo service puppetmaster status
+ 2. Stop the puppet master:
+     sudo service puppetmaster stop
+ 3. Run this command:
+     sudo puppet master --verbose --no-daemonize
+ 4. This command will not complete but it's safe to stop it. Do the following:
+      Ctrl+C to kill puppet master
+ 5. Restart the puppet master:
+     sudo service puppetmaster start
+ 6. Check the puppet master is running:
+     sudo service puppetmaster status
+ 7. Check that the puppet master certificate is in place:
+     sudo puppet cert list --all # check for 'puppet' cert
 
+---
 On the puppet nodes:
 
 sudo service puppet status # test that agent was installed
