@@ -4,7 +4,8 @@ This is the configuration file for my Udemy course to create a puppet master in 
 
 Credits:
 --------
- * When I was learning Vagrant and puppet I did alot of research on the internet and found some useful code which I modified to suit my needs. I'd like to thanks garystafford/multi-vagrant-puppet-vms for his help.
+ * When I was learning Vagrant and puppet I did alot of research on the internet and found some useful code which
+   I modified to suit my needs. I'd like to thanks garystafford/multi-vagrant-puppet-vms for his help.
 
 Setup:
 --------
