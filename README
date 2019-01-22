@@ -34,7 +34,9 @@ Once your puppet master is running, on the puppet master do the following:
      sudo service puppetmaster status
  7. Check that the puppet master certificate is in place:
      sudo puppet cert list --all # check for 'puppet' cert
-
+     
+ * Now move onto section 4 - Multi-Node VagrantFile
+ 
 ---
 On the puppet nodes:
 
